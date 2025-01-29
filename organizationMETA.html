@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Grid Biodata Popup</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="footer.css">
+
+    <style>
+
+body {
+	background-image:url('bg1.jpg'); 
+	background-size: cover; 
+	background-repeat: no-repeat; 
+	background-attachment: fixed;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        background-color: #f4f4f4;
+	align-items: center;
+}
+
+header {
+        background-color: #333;
+        color: white;
+        width: 100%;
+        padding: 20px 0;
+        text-align: center;
+        font-size: 50px;
+        font-weight: bold;
+}
+
+footer {
+        background-color: #333;
+        color: white;
+        width: 100%;
+        padding: 20px 0;
+	padding-left: 50px;
+        text-align: left;
+        font-size: 24px;
+        font-weight: bold;
+}
+
+.dropdown {
+            position: relative;
+            display: inline-block;
+}
+
+.dropdown ul {
+            display: none; /* Senarai tersembunyi secara lalai */
+            position: absolute;
+            background-color: #444;
+            list-style-type: none;
+            margin: 0;
+            padding: 10px;
+            border: 1px solid #555;
+}
+
+.dropdown ul li {
+            margin: 5px 0;
+}
+        .dropdown ul li a {
+            text-decoration: none;
+            color: white;
+        }
+        .dropdown ul li a:hover {
+            color: #00bcd4;
+}
+
+
+.grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 kolom di grid */
+        grid-template-rows: auto auto; /* 2 baris */
+        gap: 20px;
+        justify-content: center;
+        text-align: center;
+        width: 80%;
+}
+
+/* Picture for organization member */
+
+.grid-container > div:nth-child(1) {
+        grid-column: 1; 
+        grid-row: 1;
+}
+
+.grid-container > div:nth-child(2) {
+        grid-column: 2; 
+        grid-row: 1;
+}
+
+.grid-container > div:nth-child(3) {
+        grid-column: 3; 
+        grid-row: 1;
+}
+
+/* Gambar baris kedua */
+
+.grid-container > div:nth-child(4) {
+        grid-column: 1 / span 2; 
+        grid-row: 2; 
+}
+
+.grid-container > div:nth-child(5) {
+        grid-column: 2 / span 2; 
+        grid-row: 2; 
+}
+
+/* picture for internship member */
+
+.grid-container2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        grid-gap: 100px;
+        justify-items: center; 
+        text-align: center; 
+}
+
+.grid-container2 div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+}
+
+.image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+}
+
+    .image:hover {
+        transform: scale(1.1);
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: left;
+        max-width: 400px;
+        width: 90%;
+    }
+
+    .close-btn {
+        float: right;
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+        cursor: pointer;
+    }
+
+    .close-btn:hover {
+        color: red;
+    }
+
+@media only screen and (max-width:800px) {
+  /* For tablets: */
+  .main {
+    width: 80%;
+    padding: 0;
+  }
+  .right {
+    width: 100%;
+  }
+}
+@media only screen and (max-width:800px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width: 100%;
+  }
+}	
+
+
+</style>
+
+</head>
+<body>
+
+<div class="header">
+    <a href="metanew.html" class="logo"><img src="META LOGO.PNG" alt="Meta logo" class="logo-navbar"></a>
+    <div class="header-right" style="padding-left:502px">
+	<a href="index.html" class="button" style="color:blue"><b>Log in</b></a>
+	<a href="apply.html" class="button" style="color:blue"><b>Registration Form</b></a>
+        <a href="metanew.html">About Meta</a>
+        <a href="history.html">History</a>
+        <a href="organizationMETA.html">Organization Member</a>
+
+        <div class="w3-dropdown-hover">
+          <button class="w3-button">Our Apps<i class="fa fa-caret-down"></i></button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="appinsta.html" class="w3-bar-item w3-button">Instagram</a>
+            <a href="FACEBOOK APP.html" class="w3-bar-item w3-button">Facebook</a>
+            <a href="whatsapplatest.html" class="w3-bar-item w3-button">WhatsApp</a>
+          </div>
+        </div>
+
+        <a href="Contact.html">Contact</a>
+    </div>
+  </div>
+
+    <header> 
+        ORGANIZATION MEMBER
+    </header>
+
+<br>
+<br>
+<br>
+
+<!-- moving title -->
+        <p style="width: 100%; font-size: 24px; font-weight: bold; color: white; "><marquee> META! </marquee></p>
+
+<!-- Top 5 -->
+
+<br>
+<br>
+<br>
+
+    <div class="grid-container">
+        <div>
+            <img src="mark.jpg" alt="Mark Zuckerberg" class="image" id="image1" >
+            <p>Mark Zuckerberg</p>
+        </div>
+        <div>
+            <img src="javier.jpg" alt="Javier Oliván" class="image" id="image2">
+            <p>Javier Oliván</p>
+        </div>
+        <div>
+            <img src="nick.jpg" alt="Nick Clegg" class="image" id="image3">
+            <p>Nick Clegg</p>
+        </div>
+        <div>
+            <img src="susan.jpg" alt="Susan Li" class="image" id="image4" >
+            <p>Susan Li</p>
+        </div>
+        <div>
+            <img src="andrew.jpg" alt="Andrew 'Boz' Bosworth" class="image" id="image5">
+            <p>Andrew 'Boz' Bosworth</p>
+        </div>
+    </div>
+
+<!-- the member -->
+    <div class="modal" id="modal1">
+        <div class="modal-content">
+            <span class="close-btn" id="close1">&times;</span>
+            <h2>Biodata Mark Zuckerberg</h2>
+            <p><strong>Full Name:</strong> Mark Elliot Zuckerberg</p>
+            <p><strong>Date of Birth:</strong> May 14, 1984</p>
+            <p><strong>Place of Birth:</strong> White Plains, New York, USA</p>
+            <p><strong>Occupation:</strong> Founder, Chairman, and CEO of Meta Platforms</p>
+            <p><strong>Education Background:</strong> Attended Phillips Exeter Academy and later studied at Harvard University but dropped out to start Facebook in 2004</p>
+            <p><strong>Hobbies and Interests:</strong> 
+                <ul>
+                    <li>Technology</li>
+                    <li>computer Programming</li>
+                    <li>Philanthropy</li>
+                </ul>
+            </p>
+
+        </div>
+    </div>
+    <div class="modal" id="modal2">
+        <div class="modal-content">
+            <span class="close-btn" id="close2">&times;</span>
+            <h2>Biodata Javier Oliván</h2>
+            <p><strong>Full Name:</strong> Javier Oliván López</p>
+	    <p><strong>Date of Birth:</strong> 1977</p>
+            <p><strong>Place of Birth:</strong>Sabiñánigo, Huesca, Spain</p>
+            <p><strong>Occupation:</strong> Chief Operating Officer (COO) of Meta Platforms</p>
+            <p><strong>Education Background:</strong> Bachelor's degree in Electrical and Industrial Engineering from the University of Navarra; MBA from Stanford University</p>
+            <p><strong>Hobbies and Interests:</strong> 
+                <ul>
+                    <li>Speaking Multiple Languages</li>
+                    <li>Surfing</li>
+                    <li>Skydiving</li>
+                </ul>
+            </p>
+
+        </div>
+    </div>
+    <div class="modal" id="modal3">
+        <div class="modal-content">
+            <span class="close-btn" id="close3">&times;</span>
+            <h2>Biodata Nick Clegg</h2>
+            <p><strong>Full Name:</strong> Sir Nicholas William Peter Clegg</p>
+	    <p><strong>Date of Birth:</strong> January 7, 1967</p>
+            <p><strong>Place of Birth:</strong> Chalfont St Giles, Buckinghamshire, England</p>
+            <p><strong>Occupation:</strong> President of Global Affairs at Meta Platforms</p>
+            <p><strong>Education Background:</strong> Degree in Philosophy, Politics, and Economics from the University of Cambridge; Master's degree in International Relations from Georgetown University</p>
+            <p><strong>Hobbies and Interests:</strong> 
+                <ul>
+                    <li>Politics</li>
+                    <li>History</li>
+                    <li>Music</li>
+                </ul>
+            </p>
+
+        </div>
+    </div>
+    <div class="modal" id="modal4">
+        <div class="modal-content">
+            <span class="close-btn" id="close4">&times;</span>
+            <h2>Biodata Susan Li</h2>
+            <p><strong>Full Name:</strong> Susan Li</p>
+            <p><strong>Occupation:</strong> Chief Financial Officer (CFO) of Meta Platforms</p>
+            <p><strong>Education Background:</strong> Bachelor's degree in Economics from Peking University; MBA from Stanford University</p>
+	    <p><strong>Hobbies and Interests:</strong> 
+                <ul>
+                    <li>Finance</li>
+                    <li>Investment</li>
+                    <li>Education</li>
+                </ul>
+            </p>
+
+        </div>
+    </div>
+    <div class="modal" id="modal5">
+        <div class="modal-content">
+            <span class="close-btn" id="close5">&times;</span>
+            <h2>Biodata Andrew 'Boz' Bosworth</h2>
+            <p><strong>Full Name:</strong> Andrew 'Boz' Bosworth</p>
+            <p><strong>Place of Birth:</strong> Santa Clara County, California, USA</p>
+            <p><strong>Occupation:</strong> Chief Technology Officer (CTO) of Meta Platforms</p>
+            <p><strong>Education Background:</strong> Degree in Computer Science from Harvard University</p>
+            <p><strong>Hobbies and Interests:</strong> 
+                <ul>
+                    <li>Technology</li>
+                    <li>Programming</li>
+                    <li>Community</li>
+                </ul>
+            </p>
+
+        </div>
+    </div>
+  
+<!-- Intership Member -->
+
+<br>
+<br>
+<br>
+
+	<header>
+        	INTERNSHIP MEMBER
+    	</header>
+
+<br>
+<br>
+<br>
+
+    <div class="grid-container2">
+        <div>
+            <img src="puteri.jpg" alt="Puteri Zainaba" class="image" id="image6" >
+            <p>Puteri Zainaba</p>
+        </div>
+        <div>
+            <img src="syamil.jpg" alt="Syamil Irsyad" class="image" id="image7">
+            <p>Syamil Irsyad</p>
+        </div>
+        <div>
+            <img src="aina.jpg" alt="Nuraina Ashikin" class="image" id="image8">
+            <p>Nuraina Ashikin</p>
+        </div>
+        <div>
+            <img src="ina.jpg" alt="Nur Serina" class="image" id="image9" >
+            <p>Nur Serina</p>
+        </div>
+    </div>
+
+<!-- member 2 -->
+    <div class="modal" id="modal6">
+        <div class="modal-content">
+            <span class="close-btn" id="close6">&times;</span>
+            <h2>Biodata Puteri</h2>
+            <p><strong>Full Name:</strong> Puteri Zainaba Safiah Binti Abd Karim </p>
+            <p><strong>Date of Birth:</strong> June 20, 2004</p>
+            <p><strong>Place of Birth:</strong> Hospital KPJ Pakar Puteri</p>
+            <p><strong>Internship Section :</strong> Data and Analytics Departments</p>
+            <p><strong>Education Background:</strong> Diploma in Information Management at UiTM Segamat</p>
+            <p><strong>Hobbies and Interests:</strong> 
+                <ul>
+                    <li>Arts and Drawing</li>
+                    <li>Read psychological books</li>
+                    <li>Learn new languages</li>
+                </ul>
+            </p>
+
+        </div>
+    </div>
+    <div class="modal" id="modal7">
+        <div class="modal-content">
+            <span class="close-btn" id="close7">&times;</span>
+            <h2>Biodata Syamil</h2>
+            <p><strong>Full Name:</strong> Syamil Irsyad Bin Abdul Razak</p>
+	    <p><strong>Date of Birth:</strong> October 27, 2004</p>
+            <p><strong>Place of Birth:</strong>Ng Specialist Muar</p>
+            <p><strong>Internship Section :</strong> Technical and Engineering Departments</p>
+            <p><strong>Education Background:</strong> Diploma in Information Management at UiTM Segamat</p>
+            <p><strong>Hobbies and Interests:</strong> 
+                <ul>
+                    <li>Photography</li>
+                    <li>Badminton</li>
+                    <li>Driving</li>
+                </ul>
+            </p>
+
+        </div>
+    </div>
+    <div class="modal" id="modal8">
+        <div class="modal-content">
+            <span class="close-btn" id="close8">&times;</span>
+            <h2>Biodata Aina</h2>
+            <p><strong>Full Name:</strong> Nuraina Ashikin Binti Shaharudin</p>
+	    <p><strong>Date of Birth:</strong> March 4, 2004</p>
+            <p><strong>Place of Birth:</strong> Hospital Batu Pahat</p>
+            <p><strong>Internship Section :</strong> Legal and Policy Departments</p>
+            <p><strong>Education Background:</strong> Diploma in Information Management at UiTM Segamat</p>
+            <p><strong>Hobbies and Interests:</strong> 
+                <ul>
+                    <li>Read and Watching Movie</li>
+                    <li>Make Craft</li>
+                    <li>Learn and Try new things</li>
+                </ul>
+            </p>
+
+        </div>
+    </div>
+    <div class="modal" id="modal9">
+        <div class="modal-content">
+            <span class="close-btn" id="close9">&times;</span>
+            <h2>Biodata Ina</h2>
+            <p><strong>Full Name:</strong> Nur Serina Binti Salim</p>
+	    <p><strong>Date of Birth:</strong> December 10, 2004</p>
+            <p><strong>Place of Birth:</strong> Hospital Batu Pahat</p>
+            <p><strong>Internship Section :</strong> Creative and Content Departments</p>
+            <p><strong>Education Background:</strong> Diploma in Information Management at UiTM Segamat</p>
+	    <p><strong>Hobbies and Interests:</strong> 
+                <ul>
+                    <li>Photography</li>
+                    <li>Editing</li>
+                    <li>Reading</li>
+                </ul>
+            </p>
+
+        </div>
+    </div>
+    
+    <script>
+        const images = document.querySelectorAll('.image');
+        const modals = document.querySelectorAll('.modal');
+        const closeButtons = document.querySelectorAll('.close-btn');
+
+        images.forEach((image, index) => {
+            image.addEventListener('click', () => {
+                modals[index].style.display = 'flex';
+            });
+        });
+
+        closeButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                modals[index].style.display = 'none';
+            });
+        });
+
+        window.addEventListener('click', (event) => {
+            modals.forEach((modal) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+
+	
+        function toggleDropdown() {
+	event.preventDefault();
+            const dropdown = document.getElementById("dropdown-list");
+            if (dropdown.style.display === "block") {
+                dropdown.style.display = "none";
+            } else {
+                dropdown.style.display = "block";
+            }
+        }
+  
+    </script>
+
+<br>
+<br>
+<br>
+
+ 	<footer>
+            <div style="display: flex; align-items: top; gap:10px;">
+    <img src="logo meta.jpg" alt="LOGO META" style="width:450px; height:250px; border: 5px solid #002147;">
+    <p>
+        <div>
+    <a href="history.html" style="font-size: 30px; color: white;">History</a>
+    <h6 style="margin-top: 8px; color: white; text-align:justify; width: 180px;">
+        Meta Platforms, Inc., formerly Facebook, was founded by Mark Zuckerberg in 2004.It grew and acquired Instagram, WhatsApp, and Oculus.In 2021, it rebranded as Meta.
+    </h6>  
+</div>
+
+&nbsp;
+
+<div>
+    <a href="metanew.html" style="font-size: 30px; color: white;">About</a>
+    <h6 style="margin-top: 8px; color: white; text-align:justify; width: 180px;">
+        Meta focuses on building technologies to connect people, including social media platforms.
+    </h6>
+</div>
+
+&nbsp;
+	<div>
+    <a href="organizationMETA.html" style="font-size: 30px; color: white;">Organization</a>
+    <h6 style="margin-top: 8px; color: white; text-align:justify; width: 180px;">
+        Meta is led by CEO Mark Zuckerberg, supported by a team of executives driving innovation in social media, VR, AR, and the metaverse.
+    </h6>
+</div>
+
+&nbsp;
+	<div class="dropdown">
+        <a href="#" onclick="toggleDropdown()" style="font-size: 30px; text-decoration: none; color: white; ">Product</a>
+
+        <ul id="dropdown-list">
+            <li><a href="appinsta.html" style="font-size: 10px; text-decoration: none; color: white;">Instagram</a></li>
+
+            <li><a href="FACEBOOK APP.html" style="font-size: 10px; text-decoration: none; color: white;">Facebook</a></li>
+
+            <li><a href="whatsapplatest.html" style="font-size: 10px; text-decoration: none; color: white;">WhatsApp</a></li>
+        </ul>
+        </div>
+
+&nbsp;
+&nbsp;
+
+  	<div>
+    <a href="Contact.html" style="font-size: 30px; color: white;">Contact Us</a>
+	</div>
+
+
+    </p>
+
+</footer>
+
+
+<footer>
+<h5 style="text-align: center; margin-top: 20px;">© 2025 Meta Platforms, Inc. I All Rights Reserved <br>
+      For more information, visit <a href="https://about.meta.com">Meta
+      Official Website</h5>
+        </footer>
+
+</body>
+</html>
