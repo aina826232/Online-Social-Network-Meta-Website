@@ -1,0 +1,21 @@
+body {
+
+.line {
+      width: 100px;
+      height: 5px;
+      background-color: #333;
+      animation: line-animation 2s infinite; 
+    }
+
+    @keyframes line-animation {
+      0% {
+        width: 0%; 
+      }
+      50% {
+        width: 100%;
+      }
+      100% {
+        width: 0%;
+      }
+
+</body>
